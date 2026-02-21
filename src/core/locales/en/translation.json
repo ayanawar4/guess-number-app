@@ -1,0 +1,50 @@
+{
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "logoutConfirm": "Are you sure you want to logout?",
+    "email": "Email",
+    "username": "Username",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "registerNow": "Register now",
+    "loginNow": "Login now"
+  },
+  "game": {
+    "title": "Guess the Number",
+    "subtitle": "I'm thinking of a number between 1 and 43",
+    "yourGuess": "Your Guess",
+    "submit": "Submit Guess",
+    "playAgain": "Play Again",
+    "guesses": "Guesses",
+    "bestScore": "Best Score",
+    "noBestScore": "No best score yet",
+    "tooLow": "Too low! Try a higher number.",
+    "tooHigh": "Too high! Try a lower number.",
+    "correct": "Correct! You won!",
+    "newRecord": "New record! You guessed it in {{count}} tries!",
+    "congratulations": "Congratulations!"
+  },
+  "common": {
+    "welcome": "Welcome, {{name}}!",
+    "error": "Error",
+    "success": "Success",
+    "loading": "Loading...",
+    "cancel": "Cancel"
+  },
+  "validation": {
+    "required": "This field is required",
+    "usernameRequired": "Username is required",
+    "usernameMinLength": "Username must be at least 3 characters",
+    "passwordRequired": "Password is required",
+    "passwordMinLength": "Password must be at least 6 characters",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Invalid email format",
+    "confirmPasswordRequired": "Confirm Password is required",
+    "passwordMismatch": "Passwords do not match",
+    "numberBetween": "Number must be between {{min}} and {{max}}"
+  }
+}

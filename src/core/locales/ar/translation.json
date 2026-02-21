@@ -1,0 +1,50 @@
+{
+  "auth": {
+    "login": "تسجيل الدخول",
+    "register": "التسجيل",
+    "logout": "تسجيل الخروج",
+    "logoutConfirm": "هل أنت متأكد من تسجيل الخروج؟",
+    "email": "البريد الإلكتروني",
+    "username": "اسم المستخدم",
+    "password": "كلمة المرور",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "noAccount": "ليس لديك حساب؟",
+    "hasAccount": "لديك حساب بالفعل؟",
+    "registerNow": "سجل الآن",
+    "loginNow": "سجل الدخول الآن"
+  },
+  "game": {
+    "title": "خمن الرقم",
+    "subtitle": "أفكر في رقم بين 1 و 43",
+    "yourGuess": "تخمينك",
+    "submit": "إرسال التخمين",
+    "playAgain": "العب مرة أخرى",
+    "guesses": "المحاولات",
+    "bestScore": "أفضل نتيجة",
+    "noBestScore": "لا توجد نتيجة أفضل حتى الآن",
+    "tooLow": "منخفض جداً! جرب رقماً أعلى.",
+    "tooHigh": "مرتفع جداً! جرب رقماً أقل.",
+    "correct": "صحيح! لقد فزت!",
+    "newRecord": "رقم قياسي جديد! لقد خمنته في {{count}} محاولة!",
+    "congratulations": "تهانينا!"
+  },
+  "common": {
+    "welcome": "مرحباً، {{name}}!",
+    "error": "خطأ",
+    "success": "نجاح",
+    "loading": "جاري التحميل...",
+    "cancel": "إلغاء"
+  },
+  "validation": {
+    "required": "هذا الحقل مطلوب",
+    "usernameRequired": "اسم المستخدم مطلوب",
+    "usernameMinLength": "يجب أن يكون اسم المستخدم 3 أحرف على الأقل",
+    "passwordRequired": "كلمة المرور مطلوبة",
+    "passwordMinLength": "يجب أن تكون كلمة المرور 6 أحرف على الأقل",
+    "emailRequired": "البريد الإلكتروني مطلوب",
+    "emailInvalid": "صيغة البريد الإلكتروني غير صحيحة",
+    "confirmPasswordRequired": "تأكيد كلمة المرور مطلوب",
+    "passwordMismatch": "كلمات المرور غير متطابقة",
+    "numberBetween": "يجب أن يكون الرقم بين {{min}} و {{max}}"
+  }
+}
