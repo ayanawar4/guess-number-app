@@ -1,3 +1,28 @@
+/**
+ * Reusable button component with variants and sizes.
+ *
+ * @module components/ui/Button
+ *
+ * @remarks
+ * Provides consistent button styling with support for different variants,
+ * sizes, loading states, and accessibility features.
+ *
+ * @example
+ * ```typescript
+ * <Button
+ *   variant="primary"
+ *   size="lg"
+ *   onPress={handleSubmit}
+ *   isLoading={loading}
+ *   testID="submit-button"
+ *   accessibilityLabel="Submit form"
+ * >
+ *   Submit
+ * </Button>
+ * ```
+ */
+
+import React from 'react';
 import {
   TouchableOpacity,
   Text,
@@ -8,23 +33,41 @@ import {
   TextStyle,
 } from 'react-native';
 import { colors, spacing, borderRadius, fontSize, fontWeight } from '@/core/styles/theme';
+import type { TestableAccessibleProps } from '@/core/@types/common';
 
-interface ButtonProps extends TouchableOpacityProps {
+/**
+ * Props for Button component.
+ */
+export interface ButtonProps extends TouchableOpacityProps, TestableAccessibleProps {
+  /** Button text */
   children: string;
+  /** Button variant */
   variant?: 'primary' | 'secondary' | 'destructive' | 'ghost';
+  /** Button size */
   size?: 'sm' | 'md' | 'lg';
+  /** Whether button is in loading state */
   isLoading?: boolean;
 }
 
-export function Button({
+/**
+ * Button component with variants and sizes.
+ *
+ * @param props - Component props
+ * @returns Button component
+ */
+export const Button: React.FC<ButtonProps> = React.memo(({
   children,
   variant = 'primary',
   size = 'md',
   isLoading = false,
   disabled,
   style,
+  testID,
+  accessibilityLabel,
+  accessibilityHint,
+  accessibilityRole = 'button',
   ...props
-}: ButtonProps) {
+}) => {
   const buttonStyle: ViewStyle[] = [
     styles.base,
     variantStyles[variant],
@@ -44,16 +87,26 @@ export function Button({
       style={buttonStyle}
       disabled={disabled || isLoading}
       activeOpacity={0.7}
+      testID={testID}
+      accessibilityLabel={accessibilityLabel || children}
+      accessibilityHint={accessibilityHint}
+      accessibilityRole={accessibilityRole}
+      accessibilityState={{ disabled: disabled || isLoading }}
       {...props}
     >
       {isLoading ? (
-        <ActivityIndicator color={variant === 'ghost' ? colors.primary : colors.primaryForeground} />
+        <ActivityIndicator
+          color={variant === 'ghost' ? colors.primary : colors.primaryForeground}
+          testID={testID ? `${testID}-spinner` : undefined}
+        />
       ) : (
         <Text style={textStyle}>{children}</Text>
       )}
     </TouchableOpacity>
   );
-}
+});
+
+Button.displayName = 'Button';
 
 const styles = StyleSheet.create({
   base: {

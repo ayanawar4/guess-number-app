@@ -33,7 +33,12 @@
     "error": "Error",
     "success": "Success",
     "loading": "Loading...",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "restart": "Restart"
+  },
+  "settings": {
+    "language_changed": "Language Changed",
+    "restart_required": "The app needs to restart to apply RTL changes. Restart now?"
   },
   "validation": {
     "required": "This field is required",

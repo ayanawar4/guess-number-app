@@ -1,3 +1,16 @@
+/**
+ * Root layout component.
+ *
+ * @module app/_layout
+ *
+ * @remarks
+ * Initializes app-wide providers and configuration including:
+ * - Error boundary for error handling
+ * - Gesture handler for touch interactions
+ * - i18n for internationalization
+ * - Auth state initialization
+ */
+
 import '../core/styles/global.css';
 import { useEffect } from 'react';
 import { I18nManager } from 'react-native';
@@ -6,6 +19,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '@/core/i18n';
 import { useAuthStore } from '@/state/stores/auth/auth-store';
+import { ErrorBoundary } from '@/components/common/providers/ErrorBoundary';
 
 export default function RootLayout() {
   const initialize = useAuthStore((state) => state.initialize);
@@ -21,14 +35,16 @@ export default function RootLayout() {
   }, [initialize]);
 
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
-      <I18nextProvider i18n={i18n}>
-        <Stack screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="index" />
-          <Stack.Screen name="(auth)" />
-          <Stack.Screen name="(app)" />
-        </Stack>
-      </I18nextProvider>
-    </GestureHandlerRootView>
+    <ErrorBoundary>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <I18nextProvider i18n={i18n}>
+          <Stack screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="index" />
+            <Stack.Screen name="(auth)" />
+            <Stack.Screen name="(app)" />
+          </Stack>
+        </I18nextProvider>
+      </GestureHandlerRootView>
+    </ErrorBoundary>
   );
 }
